@@ -34,7 +34,7 @@ const MongoDBStore = require("connect-mongo")(session);
 // 2. return files to the old db 27017
 // 3. orgenize again the export files from 27017 to my cluster of yelp camp
 // 4. connect this project to my db cluster collections
-const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL_2ND;
 
 //|| 'mongodb://localhost:27017/yelp-camp';
 
