@@ -18,10 +18,25 @@ const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
-
 const MongoDBStore = require("connect-mongo")(session);
 
-const dbUrl = process.env.DB_URL6 || 'mongodb://localhost:27017/yelp-camp';
+// coppied code from mongoDB connect to your app
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const uri = process.env.DB_URL;
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
+
+// 1. find my db url
+// 2. return files to the old db 27017
+// 3. orgenize again the export files from 27017 to my cluster of yelp camp
+// 4. connect this project to my db cluster collections
+const dbUrl = process.env.DB_URL;
+
+//|| 'mongodb://localhost:27017/yelp-camp';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
