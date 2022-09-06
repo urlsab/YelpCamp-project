@@ -20,36 +20,72 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const MongoDBStore = require("connect-mongo")(session);
 
+// =================================================================
 // coppied code from mongoDB connect to your app
-// const { MongoClient, ServerApiVersion } = require('mongodb');
-// const uri = process.env.DB_URL;
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
-
-// 1. find my db url
-// 2. return files to the old db 27017
-// 3. orgenize again the export files from 27017 to my cluster of yelp camp
-// 4. connect this project to my db cluster collections
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const dbUrl = process.env.DB_URL_2ND;
+const client = new MongoClient(dbUrl, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+    serverApi: ServerApiVersion.v1
+});
+client.connect(err => {
+  const collectionCampgrounds = client.db("yelp-camp");
+  // perform actions on the collection object
+    client.close();
+});
+
+// Replace the uri string with your connection string.
+// const uri = "ongodb+srv://urlsab:hesed2emet1@cluster-of-the-yelp-cam.3rut4.mongodb.net/?retryWrites=true&w=majority";
+
+  //<user> = urlsab
+  //<password> = hesed2emet1
+  //<cluster-url> = cluster-of-the-yelp-cam.3rut4.mongodb.net/
+ // mongodb+srv://urlsab:hesed2emet1@cluster-of-the-yelp-cam.3rut4.mongodb.net/?retryWrites=true&w=majority
+
+// const clients = new MongoClient(uri);
+
+// async function run() {
+//   try {
+//     const database = clients.db('yelp-camp');
+//     const campgroundsCollection = database.collection('campgrounds');
+//     const cursor = ratings.find();
+//     await cursor.forEach(doc => console.dir(doc));
+//   } finally {
+//     // Ensures that the client will close when you finish/error
+//     await client.close();
+//   }
+// }
+// run().catch(console.dir);
+
+//===================================================================
+
+
+// find the bug in campgrounds route in both  db's
+// open the db
+// console log specific collection in both db's
+
+
+
+//=========================================================================
+// const dbUrl = process.env.DB_URL_2ND;
 
 //|| 'mongodb://localhost:27017/yelp-camp';
 
-mongoose.connect(dbUrl, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-});
+// mongoose.connect(dbUrl, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false
+// });
 
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", () => {
-    console.log("Database connected");
-});
+// const db = mongoose.connection;
+// db.on("error", console.error.bind(console, "connection error:"));
+// db.once("open", () => {
+//     console.log("Database connected");
+// });
+
+//=====================================================================
 
 const app = express();
 
