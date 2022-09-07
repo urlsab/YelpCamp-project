@@ -21,13 +21,21 @@ const reviewRoutes = require('./routes/reviews');
 
 const MongoStore = require("connect-mongo");
 
-// find the bug in campgrounds route in both  db's
-// open the db
-// console log specific collection in both db's
+// fix 2 bugs (Got allows a redirect to a UNIX socket + 
+// node_modules/@mapbox/mapbox-sdk/node_modules/got @mapbox/mapbox-sdk)
 
-const dbUrl = process.env.DB_URL_2ND;
+// https://www.youtube.com/watch?v=i0q8YCCffoM - finish this video (add button for review)
 
-// || 'mongodb://localhost:27017/yelp-camp';
+//rename out db -yelp-camp instead of 'test
+
+// install mongodb shell new version
+// install mongosh shell new versino
+
+// create db for cv-app!!! with mongo
+
+const dbUrl = process.env.DB_URL;
+
+
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
