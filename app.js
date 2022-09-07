@@ -18,21 +18,20 @@ const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
-const MongoDBStore = require("connect-mongo")(session);
+
+const MongoStore = require("connect-mongo");
 
 // find the bug in campgrounds route in both  db's
 // open the db
 // console log specific collection in both db's
 
-const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL_2ND;
 
 // || 'mongodb://localhost:27017/yelp-camp';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
-    useCreateIndex: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
 });
 
 const db = mongoose.connection;
@@ -57,8 +56,8 @@ app.use(mongoSanitize({
 }))
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
 
-const store = new MongoDBStore({
-    url: dbUrl,
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
     secret,
     touchAfter: 24 * 60 * 60
 });
@@ -122,7 +121,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/douqbebwk/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://res.cloudinary.com/douqbebwk/",  
                 "https://images.unsplash.com",
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
@@ -168,5 +167,5 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log(`Serving on port ${port}`)
+    console.log(`Serving at http://localhost:${port}`)
 })
