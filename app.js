@@ -20,70 +20,26 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const MongoDBStore = require("connect-mongo")(session);
 
-// =================================================================
-// coppied code from mongoDB connect to your app
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const dbUrl = process.env.DB_URL_2ND;
-const client = new MongoClient(dbUrl, { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true, 
-    serverApi: ServerApiVersion.v1
-});
-client.connect(err => {
-  const collectionCampgrounds = client.db("yelp-camp");
-  // perform actions on the collection object
-    client.close();
-});
-
-// Replace the uri string with your connection string.
-// const uri = "ongodb+srv://urlsab:hesed2emet1@cluster-of-the-yelp-cam.3rut4.mongodb.net/?retryWrites=true&w=majority";
-
-  //<user> = urlsab
-  //<password> = hesed2emet1
-  //<cluster-url> = cluster-of-the-yelp-cam.3rut4.mongodb.net/
- // mongodb+srv://urlsab:hesed2emet1@cluster-of-the-yelp-cam.3rut4.mongodb.net/?retryWrites=true&w=majority
-
-// const clients = new MongoClient(uri);
-
-// async function run() {
-//   try {
-//     const database = clients.db('yelp-camp');
-//     const campgroundsCollection = database.collection('campgrounds');
-//     const cursor = ratings.find();
-//     await cursor.forEach(doc => console.dir(doc));
-//   } finally {
-//     // Ensures that the client will close when you finish/error
-//     await client.close();
-//   }
-// }
-// run().catch(console.dir);
-
-//===================================================================
-
-
 // find the bug in campgrounds route in both  db's
 // open the db
 // console log specific collection in both db's
 
+const dbUrl = process.env.DB_URL;
 
+// || 'mongodb://localhost:27017/yelp-camp';
 
-//=========================================================================
-// const dbUrl = process.env.DB_URL_2ND;
+mongoose.connect(dbUrl, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+});
 
-//|| 'mongodb://localhost:27017/yelp-camp';
-
-// mongoose.connect(dbUrl, {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useUnifiedTopology: true,
-//     useFindAndModify: false
-// });
-
-// const db = mongoose.connection;
-// db.on("error", console.error.bind(console, "connection error:"));
-// db.once("open", () => {
-//     console.log("Database connected");
-// });
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+    console.log("Database connected");
+});
 
 //=====================================================================
 
