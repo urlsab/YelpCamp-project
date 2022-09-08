@@ -21,13 +21,17 @@ module.exports.register = async (req, res, next) => {
 }
 
 module.exports.renderLogin = (req, res) => {
+    // check if we have the "returnTo" query
+    if (req.query.returnTo) {
+        // then put it inside the session
+        req.session.returnTo = req.query.returnTo;
+    } 
     res.render('users/login');
 }
 
 module.exports.login = (req, res) => {
     req.flash('success', 'welcome back!');
-    const redirectUrl = req.session.returnTo || '/campgrounds';
-    delete req.session.returnTo;
+    const redirectUrl = res.locals.returnTo || '/campgrounds';
     res.redirect(redirectUrl);
 }
 
