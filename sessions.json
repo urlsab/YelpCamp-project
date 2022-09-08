@@ -1,0 +1,14 @@
+[{
+  "_id": "TNCyyaBxAnuGufsjs5IxYIa1w97cwRrL",
+  "expires": {
+    "$date": {
+      "$numberLong": "1663220791712"
+    }
+  },
+  "lastModified": {
+    "$date": {
+      "$numberLong": "1662615991712"
+    }
+  },
+  "session": "{\"cookie\":{\"originalMaxAge\":604800000,\"expires\":\"2022-09-15T05:46:31.712Z\",\"httpOnly\":true,\"path\":\"/\"},\"passport\":{\"user\":\"yyy\"},\"flash\":{}}"
+}]

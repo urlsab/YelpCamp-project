@@ -24,8 +24,6 @@ const MongoStore = require("connect-mongo");
 // fix 2 bugs (Got allows a redirect to a UNIX socket + 
 // node_modules/@mapbox/mapbox-sdk/node_modules/got @mapbox/mapbox-sdk)
 
-// https://www.youtube.com/watch?v=i0q8YCCffoM - finish this video (add button for review)
-
 //rename out db -yelp-camp instead of 'test
 
 // install mongodb shell new version
@@ -34,8 +32,6 @@ const MongoStore = require("connect-mongo");
 // create db for cv-app!!! with mongo
 
 const dbUrl = process.env.DB_URL;
-
-
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,

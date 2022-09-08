@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "6317001b717a5a42d0e19f6d"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      138.592229549504,
+      36.3864928218528
+    ]
+  },
+  "reviews": [
+    {
+      "$oid": "6317002f717a5a42d0e19f6e"
+    }
+  ],
+  "title": "japan views",
+  "location": "japan",
+  "price": 5,
+  "description": "japan trees",
+  "images": [],
+  "author": {
+    "$oid": "6316ff9e717a5a42d0e19f6c"
+  },
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "63182e4100717d277c1de351"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      34.8419985253627,
+      31.8472608144505
+    ]
+  },
+  "reviews": [
+    {
+      "$oid": "63182e8200717d277c1de352"
+    }
+  ],
+  "title": "israel views",
+  "location": "israel",
+  "price": 26,
+  "description": "The holy land",
+  "images": [],
+  "author": {
+    "$oid": "63182e1100717d277c1de350"
+  },
+  "__v": 1
+}]
