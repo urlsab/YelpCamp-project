@@ -18,14 +18,12 @@ const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
-
-const got = require('got');
-got.extend({enableUnixSockets: false});
-
-const MongoStore = require("connect-mongo");
+const MongoStore = require('connect-mongo');
 
 // fix 2 bugs (Got allows a redirect to a UNIX socket + 
 // node_modules/@mapbox/mapbox-sdk/node_modules/got @mapbox/mapbox-sdk)
+// a. try update package.json version
+// b. try to add code from github solution of this issue
 
 // install mongodb shell new version
 // install mongosh shell new versino
