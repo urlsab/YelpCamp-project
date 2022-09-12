@@ -20,10 +20,10 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const MongoStore = require('connect-mongo');
 
-// fix 2 bugs (Got allows a redirect to a UNIX socket + 
-// node_modules/@mapbox/mapbox-sdk/node_modules/got @mapbox/mapbox-sdk)
-// a. try update package.json version
-// b. try to add code from github solution of this issue
+// fix 2 bugs (Got allows a redirect to a UNIX socket )
+
+// c. try to add manually got update from github package to the general node_models
+// d. try to delete got package from mapbox only  
 
 // install mongodb shell new version
 // install mongosh shell new versino
