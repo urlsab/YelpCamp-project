@@ -20,14 +20,11 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const MongoStore = require('connect-mongo');
 
-// fix 2 bugs (Got allows a redirect to a UNIX socket )
-
-// c. try to add manually got update from github package to the general node_models
-// d. try to delete got package from mapbox only  
+// Allways add mapbox-sdk-js package manually
+// fix 503 status code from heroku
 
 // install mongodb shell new version
 // install mongosh shell new versino
-
 // create db for cv-app!!! with mongo
 
 const dbUrl = process.env.DB_URL;
