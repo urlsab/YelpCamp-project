@@ -21,22 +21,23 @@ const extension = (joi) => ({
     }
 });
 
-const Joi = BaseJoi.extend(extension)
+const Joi = BaseJoi.extend(extension);
+const shortcutEscape = Joi.string().required().escapeHTML();
+const shortcutNumber = Joi.number().required();
 
 module.exports.campgroundSchema = Joi.object({
     campground: Joi.object({
-        title: Joi.string().required().escapeHTML(),
-        price: Joi.number().required().min(0),
-        location: Joi.string().required().escapeHTML(),
-        description: Joi.string().required().escapeHTML()
+        title: shortcutEscape,
+        price: shortcutNumber.min(0),
+        location: shortcutEscape,
+        description: shortcutEscape
     }).required(),
     deleteImages: Joi.array()
 });
 
 module.exports.reviewSchema = Joi.object({
     review: Joi.object({
-        rating: Joi.number().required().min(1).max(5),
-        body: Joi.string().required().escapeHTML()
+        rating: shortcutNumber.min(1).max(5),
+        body: shortcutEscape
     }).required()
-})
-
+});
