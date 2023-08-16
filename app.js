@@ -20,13 +20,6 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const MongoStore = require('connect-mongo');
 
-// Allways add mapbox-sdk-js package manually
-// fix 503 status code from heroku
-
-// install mongodb shell new version
-// install mongosh shell new versino
-// create db for cv-app!!! with mongo
-
 const dbUrl = process.env.DB_URL;
 
 mongoose.connect(dbUrl, {
@@ -121,7 +114,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/douqbebwk/",  
+                "https://res.cloudinary.com/",  
                 "https://images.unsplash.com",
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
