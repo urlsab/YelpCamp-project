@@ -15,6 +15,9 @@
 <br />
 <br />
 <img align="center" width="500" height="300" src="https://github.com/urlsab/YelpCamp-project/assets/77020927/07d8f636-7ec9-468b-9418-cd4c399e4539"/>
+<br />
+<br />
+<img align="center" width="500" height="300" src="https://github.com/urlsab/YelpCamp-project/assets/77020927/36a3645e-456b-468a-a0ef-04521628bd58"/>
 
 </p>
 
