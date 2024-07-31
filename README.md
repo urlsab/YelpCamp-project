@@ -1,6 +1,6 @@
 <h1 align="center"><a href="https://yelp--camp--project.herokuapp.com/"> 🤠 <ins>YELP CAMP PROJECT</ins> 🧭 </a> </h1>
 
-<h3 align="center"> 🤝 Share together camping websites around the world 🌍 </h3>
+<h3 align="center"> 🤝 Share together camping sites around the world 🌍 </h3>
 
 <hr />
 
